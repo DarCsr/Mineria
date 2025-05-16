@@ -5,7 +5,6 @@ import seaborn as sns
 # Cargar los datos
 df = pd.read_csv('data.csv')
 
-# Ajusta el nombre de tus columnas si son distintas
 # Verifica columnas numéricas disponibles
 print(df.select_dtypes(include='number').columns)
 
@@ -46,7 +45,7 @@ plt.xlabel('Cantidad')
 plt.ylabel('Precio Unitario')
 plt.show()
 
-# Extra: Generar automáticamente histogramas para todas las columnas numéricas
+# Generar automáticamente histogramas para todas las columnas numéricas
 numericas = df.select_dtypes(include='number')
 for col in numericas.columns:
     plt.hist(df[col], bins=30)
